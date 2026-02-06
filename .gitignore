@@ -1,0 +1,20 @@
+# Buildroot itself
+buildroot/
+
+# Build outputs
+output/
+dl/
+
+# Images
+*.img
+*.ext2
+*.ext4
+*.vfat
+
+# Logs
+*.log
+
+# Editor junk
+.vscode/
+.idea/
+
