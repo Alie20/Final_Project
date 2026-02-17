@@ -13,3 +13,7 @@ dl/
 .vscode/
 .idea/
 
+images/*.ext2
+images/*.vfat
+images/*.cpio
+images/*.img
