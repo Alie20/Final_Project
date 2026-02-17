@@ -1,0 +1,8 @@
+::sysinit:/usr/bin/psplash &
+
+::sysinit:/etc/init.d/rcS
+
+tty1::respawn:/bin/login -f root
+
+::ctrlaltdel:/sbin/reboot
+::shutdown:/bin/umount -a -r

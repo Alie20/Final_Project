@@ -1,0 +1,12 @@
+#!/bin/sh
+
+### Mount runtime tmpfs (needed for Wayland/Weston)
+
+mkdir -p /run
+mountpoint -q /run || mount -t tmpfs tmpfs /run
+mkdir -p /run/user
+chmod 0755 /run/user
+
+# Mount /tmp as tmpfs so Weston and others can write even if root is read-only
+mkdir -p /tmp
+mountpoint -q /tmp || mount -t tmpfs tmpfs /tmp

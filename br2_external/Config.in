@@ -1,0 +1,6 @@
+menu "Custom packages"
+
+source "$BR2_EXTERNAL_RPI5_PATH/package/kiosk-player/Config.in"
+
+endmenu
+

@@ -5,11 +5,6 @@ buildroot/
 output/
 dl/
 
-# Images
-*.img
-*.ext2
-*.ext4
-*.vfat
 
 # Logs
 *.log

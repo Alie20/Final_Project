@@ -1,0 +1,12 @@
+#!/bin/sh
+
+export XDG_RUNTIME_DIR=/run/user/0
+
+cvlc \
+	--fullscreen \
+	--loop \
+	--no-video-title-show \
+	--quiet \
+	/videos/
+
+

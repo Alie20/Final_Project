@@ -1,0 +1,29 @@
+#!/bin/sh
+case "$1" in
+start)
+    echo "Launching Weston kiosk"
+    mkdir -p /run/user/0
+    chmod 0700 /run/user/0
+    export XDG_RUNTIME_DIR=/run/user/0
+    export LIBSEAT_BACKEND=seatd
+
+    openvt -f -c 1 -- sh -c '
+        weston \
+            --backend=drm-backend.so \
+            --shell=kiosk-shell.so \
+            --log=/tmp/weston.log &
+        sleep 3
+
+        # Kill psplash before starting video
+        killall psplash 2>/dev/null
+        psplash-write "QUIT" 2>/dev/null
+
+        kiosk-player
+    ' &
+    ;;
+stop)
+    killall cvlc
+    killall weston
+    ;;
+esac
+

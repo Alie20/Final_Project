@@ -1,0 +1,7 @@
+config BR2_PACKAGE_KIOSK_PLAYER
+    bool "kiosk player (mpv fullscreen)"
+    select BR2_PACKAGE_MPV
+    select BR2_PACKAGE_WESTON
+    help
+      Automatic fullscreen video kiosk using mpv.
+
